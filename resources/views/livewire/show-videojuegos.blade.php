@@ -1,0 +1,43 @@
+<div class="my-8 text-gray-700">
+    <div class="shadow-lg shadow-gray-700 px-4 py-4" wire:init="load" wire:target="products">
+        <div class="flex items-center gap-2">
+            <h2 class="font-semibold uppercase text-xl">Videojuegos</h2>
+            <a class="text-lg text-red-600 font-semibold" href="{{ route('showcategory', ['id' => 4])}}">Más..</a>
+        </div>
+        @if (count($products))
+        <div class="owl-carousel owl-theme mt-3">
+            @foreach($products as $product)
+            <div class="item border-2">
+                <a href="{{ route('show', $product) }}">
+                    <figure>
+                        <img class="rounded h-48 w-full object-cover object-center"
+                            src=" {{ Storage::url($product->images()->first()->url) }}" alt="{{
+                        $product->name }}">
+                    </figure>
+                    <div class="px-2 py-4 flex justify-between">
+                        <div>
+                            <p class="font-semibold text-lg capitalize">{{ $product->name }}</p>
+                            <ul class="flex items-center">
+                                <li><i class="fas fa-star text-yellow-400 text-sm"></i></li>
+                                <li><i class="fas fa-star text-yellow-400 text-sm"></i></li>
+                                <li><i class="fas fa-star text-yellow-400 text-sm"></i></li>
+                                <li><i class="fas fa-star text-yellow-400 text-sm"></i></li>
+                                <li><i class="fas fa-star text-yellow-400 text-sm"></i></li>
+                                <span class="text-sm font-semibold ml-2">(18)</span>
+                            </ul>
+                        </div>
+                        <div>
+                            <p class="font-semibold text-lg">{{ $product->price }}&#128;</p>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+        @else
+        <div class="w-full">
+            <div class="loader mx-auto"></div>
+        </div>
+        @endif
+    </div>
+</div>
