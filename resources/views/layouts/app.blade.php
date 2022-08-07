@@ -5,6 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
+    <meta name="description" content="ESTA ES UNA WEB DE PRUEBA Y MUESTRA (PORTFOLIO). LOS DATOS AQUI MOSTRADOS NO SON REALES.
+    Se puede interactuar con la página sin ningún problema. NO UTILIZAR LA FUNCION DE COMPRA, NO SE HACE UNA COMPRA REAL.
+    PAGINA WEB CON FINES DE MUESTRA Y PRUEBA A MODO DE PORFOLIO.">
     <link rel="icon" type="image/png" href="{{ asset('logoWebArtisan.png') }}">
     <title>{{ config('app.name', 'Laravel') }}</title>
 
